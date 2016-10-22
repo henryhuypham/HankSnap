@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get   'friendships/index', to: 'friendships#index'
+  post  'friendships/create', to: 'friendships#create'
+  post  'friendships/block', to: 'friendships#block'
+  post  'friendships/remove', to: 'friendships#remove'
+
   get   'messages/inbox', to: 'messages#inbox'
   get   'messages/sent', to: 'messages#sent'
   get   'messages/compose', to: 'messages#compose'

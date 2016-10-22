@@ -2,12 +2,29 @@
 @import "users";
 @import "nav_bar";
 @import "messages";
+@import "friendships";
 @import url(https://fonts.googleapis.com/css?family=Share);
 @import url(https://fonts.googleapis.com/css?family=Kalam);
+
+body {
+  background: image_url("background_init.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  color: #666666;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .center_div {
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   position: absolute;
+}
+
+.no_padding {
+  padding: 0 !important;
+  margin: 0 !important;
 }
