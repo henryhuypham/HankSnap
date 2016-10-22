@@ -1,8 +1,17 @@
-#message_list_table {
+#message_list_table, #message_read_table {
   margin: 30pt 60pt 0 60pt;
 
   .message_item_unread {
     background-color: rgba(#EA2A56, 0.3);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
   }
 
   h1 {
@@ -21,21 +30,12 @@
 
   .tbl-header {
     background-color: rgba(255, 255, 255, 0.3);
-
-    th:nth-child(1), th:nth-child(3) {
-      width: 20%;
-    }
   }
 
   .tbl-content {
-    height: 75vh;
     overflow-x: auto;
     margin-top: 0px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-
-    td:nth-child(1), td:nth-child(3) {
-      width: 20%;
-    }
   }
 
   th {
@@ -43,7 +43,6 @@
     text-align: left;
     font-weight: 500;
     font-size: 12pt;
-    color: #fff;
     text-transform: uppercase;
   }
 
@@ -70,34 +69,6 @@
     margin: 50px;
   }
 
-  /* follow me template */
-  .made-with-love {
-    margin-top: 40px;
-    padding: 10px;
-    clear: left;
-    text-align: center;
-    font-size: 10px;
-    font-family: arial;
-    color: #fff;
-  }
-
-  .made-with-love i {
-    font-style: normal;
-    color: #F50057;
-    font-size: 14px;
-    position: relative;
-    top: 2px;
-  }
-
-  .made-with-love a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .made-with-love a:hover {
-    text-decoration: underline;
-  }
-
   /* for custom scrollbar for webkit browser*/
 
   ::-webkit-scrollbar {
@@ -110,5 +81,39 @@
 
   ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+#message_list_table {
+  th {
+    color: #fff;
+  }
+
+  .tbl-header {
+    th:nth-child(1), th:nth-child(3) {
+      width: 20%;
+    }
+  }
+
+  .tbl-content {
+    height: 75vh;
+  }
+
+  td:nth-child(1), td:nth-child(3) {
+    width: 20%;
+  }
+}
+
+#message_read_table {
+  .message_read_content {
+    font-size: 12pt;
+  }
+
+  .message_not_read {
+    color: #fff;
+  }
+
+  .message_already_read {
+    color: #F50057;
   }
 }

@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  $(window).on("load resize ", function () {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right': scrollWidth});
+  }).resize();
+</script>
+
+<section id="message_read_table">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+      <tr>
+        <th><strong class="<%= @is_read ? 'message_already_read' : 'message_not_read' %>">
+          <%= @is_read ? 'MESSAGE HAS ALREADY BEEN READ!' : @message.subject %>
+        </strong></th>
+      </tr>
+      </thead>
+    </table>
+  </div>
+  <% unless @is_read %>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+        <tr class="message_item_unread">
+          <td colspan="8"><strong>FROM: </strong><%= "#{sender_display_name(@message)} - #{@message.sender.email}" %>
+          </td>
+          <td colspan="2"><%= sent_time(@message) %></td>
+        </tr>
+        <tr>
+          <td colspan="10" class="message_read_content"><%= @message.content %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</section>
