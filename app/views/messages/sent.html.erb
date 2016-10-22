@@ -1,2 +1,27 @@
-<h1>Messages#sent</h1>
-<p>Find me in app/views/messages/sent.html.erb</p>
+<script type="text/javascript">
+  $(window).on("load resize ", function () {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right': scrollWidth});
+  }).resize();
+</script>
+
+<section id="sent_messages_table">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+      <tr>
+        <th><strong>Recipient</strong></th>
+        <th><strong>Subject</strong></th>
+        <th><strong>Status</strong></th>
+      </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <%= render partial: 'sent_msg', collection: @messages %>
+      </tbody>
+    </table>
+  </div>
+</section>
