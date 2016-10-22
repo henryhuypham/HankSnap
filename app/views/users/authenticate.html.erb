@@ -3,6 +3,7 @@
 
 <div class="authenticate_container center_div">
   <div class="authenticate_card"></div>
+
   <div class="authenticate_card">
     <h1 class="title">HANK SNAP</h1>
     <%= form_tag '/sign_in', method: :post, name: 'user' do %>
@@ -27,14 +28,19 @@
     <h1 class="title">HANK SNAP
       <div class="close"></div>
     </h1>
-    <%= form_tag '/sign_up', method: :post, name: 'user' do %>
+    <%= form_for :user, url: sign_up_path, method: :post do |f| %>
       <div class="input-container">
-        <input type="text" id="Username" name="email" required="required"/>
-        <label for="Username">Username</label>
+        <%= f.text_field :name, id: 'Name', required: 'required' %>
+        <label for="Name">Name</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="password" id="Password" name="password" required="required"/>
+        <%= f.text_field :email, id: 'Email', required: 'required' %>
+        <label for="Email">Email</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <%= f.password_field :password, id: 'Password', required: 'required' %>
         <label for="Password">Password</label>
         <div class="bar"></div>
       </div>

@@ -3,20 +3,35 @@ class UsersController < ApplicationController
   end
 
   def sign_in
+    unless (@user = User.find_by(email: params[:email]))
+      flash[:error] = 'Error: username or password not found!'
+      return redirect_to root_path
+    end
 
+    unless @user.authenticate(params[:password])
+      flash[:error] = "Error: #{@user.errors.full_messages.to_sentence}"
+      return redirect_to root_path
+    end
+
+    session[:user_id] = @user.id
+    redirect_to messages_inbox_path
   end
 
   def sign_up
     @user = User.new user_params
 
     if @user.save
-      flash[:success] = 'Welcome to HankSnap!'
       session[:user_id] = @user.id
-      redirect_to
+      redirect_to messages_inbox_path
     else
       flash[:error] = "Error: #{@user.errors.full_messages.to_sentence}"
       redirect_to root_path
     end
+  end
+
+  def sign_out
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private
