@@ -44,6 +44,7 @@ GEM
     autoprefixer-rails (6.1.1)
       execjs
       json
+    awesome_print (1.7.0)
     bcrypt (3.1.11)
     bootstrap (4.0.0.alpha2)
       autoprefixer-rails (>= 6.0.3)
@@ -180,6 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bcrypt (~> 3.1.7)
   bootstrap (~> 4.0.0.alpha2)
   byebug
