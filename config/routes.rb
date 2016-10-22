@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get   'friendships/index', to: 'friendships#index'
   post  'friendships/create', to: 'friendships#create'
   post  'friendships/block', to: 'friendships#block'
+  post  'friendships/unblock', to: 'friendships#unblock'
   post  'friendships/remove', to: 'friendships#remove'
 
   get   'messages/inbox', to: 'messages#inbox'

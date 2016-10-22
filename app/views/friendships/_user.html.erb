@@ -1,19 +1,30 @@
 <% is_friend = is_friend_of_current_user(user) %>
+<% is_blocked = is_blocked_by_current_user(user) %>
 <div class="col-md-2 user_item_card_wrapper">
-  <div class="card user_item_card image-container <%= is_friend ? 'is_friend' : 'not_friend' %>">
+  <div class="card user_item_card image-container <%= is_friend ? (is_blocked ? 'blocked_friend' : 'is_friend') : 'not_friend' %>">
     <%= image_tag user_avatar_failsafe(user), alt: user.name, class: 'card-img-top' %>
     <div class="after">
       <% if is_friend %>
         <div class="center_div">
-          <%= form_for user, url: friendships_remove_path, method: :post do |f| %>
+          <%= form_for :user, url: friendships_remove_path, method: :post do |f| %>
+            <%= f.hidden_field :id, value: user.id %>
             <%= f.submit 'Remove', class: 'btn btn-danger' %>
           <% end %>
-          <%= form_for user, url: friendships_block_path, method: :post do |f| %>
-            <%= f.submit 'Block', class: 'btn btn-warning' %>
+          <% if is_blocked %>
+            <%= form_for :user, url: friendships_unblock_path, method: :post do |f| %>
+              <%= f.hidden_field :id, value: user.id %>
+              <%= f.submit 'Unblock', class: 'btn btn-primary' %>
+            <% end %>
+          <% else %>
+            <%= form_for :user, url: friendships_block_path, method: :post do |f| %>
+              <%= f.hidden_field :id, value: user.id %>
+              <%= f.submit 'Block', class: 'btn btn-warning' %>
+            <% end %>
           <% end %>
         </div>
       <% else %>
-        <%= form_for user, url: friendships_create_path, method: :post do |f| %>
+        <%= form_for :user, url: friendships_create_path, method: :post do |f| %>
+          <%= f.hidden_field :id, value: user.id %>
           <%= f.submit 'Add', class: 'btn btn-success center_div' %>
         <% end %>
       <% end %>
