@@ -1,4 +1,4 @@
-<tr class="<%= 'sent_message_unread' if sent_msg.unread? %>">
+<tr class="<%= 'message_item_unread' if sent_msg.unread? %>">
   <td><%= recipient_name_list(sent_msg) %></td>
   <td><%= sent_msg.subject %></td>
   <td><%= read_time(sent_msg) %></td>

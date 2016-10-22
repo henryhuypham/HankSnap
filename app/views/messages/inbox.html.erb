@@ -1,2 +1,27 @@
-<h1>Messages#inbox</h1>
-<p>Find me in app/views/messages/inbox.html.erb</p>
+<script type="text/javascript">
+  $(window).on("load resize ", function () {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right': scrollWidth});
+  }).resize();
+</script>
+
+<section id="message_list_table">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+      <tr>
+        <th><strong>From</strong></th>
+        <th><strong>Subject</strong></th>
+        <th><strong>Received At</strong></th>
+      </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <%= render partial: 'inbox_msg', collection: @messages %>
+      </tbody>
+    </table>
+  </div>
+</section>

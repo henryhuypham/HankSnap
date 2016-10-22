@@ -1,0 +1,5 @@
+<tr class="<%= 'message_item_unread' if inbox_msg.unread? %>">
+  <td><%= sender_display_name(inbox_msg) %></td>
+  <td><%= inbox_msg.subject %></td>
+  <td><%= sent_time(inbox_msg) %></td>
+</tr>

@@ -1,4 +1,13 @@
 module MessagesHelper
+  def sender_display_name(message)
+    "#{message.sender.name}"
+  end
+
+  def sent_time(message)
+    sent_time = message.created_at
+    readable_time_format(sent_time)
+  end
+
   def recipient_name_list(message)
     message.recipients.map { |recipient|
       recipient.name.split.first
@@ -10,9 +19,15 @@ module MessagesHelper
   def read_time(message)
     if message.read?
       read_time = message.updated_at
-      "#{read_time.strftime('%b')} #{read_time.strftime('%e')} - #{read_time.strftime('%l')}:#{read_time.strftime('%M')} #{read_time.strftime('%p')}"
+      readable_time_format(read_time)
     else
       'Unread'
     end
+  end
+
+  private
+
+  def readable_time_format(time)
+    "#{time.strftime('%b')} #{time.strftime('%e')} - #{time.strftime('%l')}:#{time.strftime('%M')} #{time.strftime('%p')}"
   end
 end
