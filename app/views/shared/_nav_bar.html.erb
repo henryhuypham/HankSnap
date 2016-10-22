@@ -2,10 +2,10 @@
   <nav id="top_nav">
     <a href="/"><%= image_tag('logo_small.png', alt: 'HankSnap') %></a>
     <div class="top_nav_action">
-      <a href="#" class="<%= 'current_action' if controller_name != 'contact_us' %>">Inbox</a>
-      <a href="#" class="<%= 'current_action' if controller_name == 'contact_us' %>">Sent</a>
-      <a href="#" class="<%= 'current_action' if controller_name != 'contact_us' %>">Compose</a>
-      <a href="#" class="<%= 'current_action' if controller_name == 'contact_us' %>">Friends</a>
+      <%= link_to 'Inbox', messages_inbox_path, class: "#{'current_action' if controller_name == 'messages' && action_name == 'inbox'}" %>
+      <%= link_to 'Sent', messages_sent_path, class: "#{'current_action' if controller_name == 'messages' && action_name == 'sent'}" %>
+      <%= link_to 'Compose', messages_compose_path, class: "#{'current_action' if controller_name == 'messages' && action_name == 'compose'}" %>
+      <%= link_to 'Friends', messages_compose_path, class: "#{'current_action' if controller_name == 'friends'}" %>
     </div>
   </nav>
 </div>

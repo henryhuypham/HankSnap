@@ -5,6 +5,6 @@ class MessagesController < ApplicationController
   def sent
   end
 
-  def new
+  def compose
   end
 end

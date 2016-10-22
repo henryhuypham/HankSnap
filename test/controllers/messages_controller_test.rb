@@ -11,7 +11,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
+  test "should get compose" do
     get messages_new_url
     assert_response :success
   end

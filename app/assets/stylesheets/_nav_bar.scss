@@ -1,6 +1,6 @@
 #top_nav_wrapper {
   height: 34pt;
-  background-color: rgba(#FFF, 0.6);
+  background-color: rgba(#FFF, 1);
   text-align: left;
   vertical-align: middle;
 }
@@ -11,7 +11,7 @@
 
 #top_nav a {
   display: inline-block;
-  color: black;
+  color: #EA2A56;
   text-decoration: none;
   font-size: 22pt;
   font-family: Share;
@@ -24,11 +24,11 @@
 }
 
 #top_nav .current_action {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #EA2A56;
 }
 
 #top_nav div a:hover {
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid #EA2A56;
 }
 
 #top_nav img {
