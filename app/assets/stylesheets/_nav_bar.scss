@@ -1,0 +1,41 @@
+#top_nav_wrapper {
+  height: 34pt;
+  background-color: rgba(#FFF, 0.6);
+  text-align: left;
+  vertical-align: middle;
+}
+
+#top_nav {
+  padding-left: 10pt;
+}
+
+#top_nav a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 22pt;
+  font-family: Share;
+}
+
+#top_nav div a {
+  padding-left: 14pt;
+  padding-right: 14pt;
+  transition: 0.1s ease;
+}
+
+#top_nav .current_action {
+  border-bottom: 2px solid black;
+}
+
+#top_nav div a:hover {
+  border-bottom: 4px solid black;
+}
+
+#top_nav img {
+  height: 28pt;
+}
+
+#top_nav .top_nav_action {
+  display: inline-block;
+  float: right;
+}

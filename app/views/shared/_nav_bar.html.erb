@@ -1,0 +1,11 @@
+<div id="top_nav_wrapper">
+  <nav id="top_nav">
+    <a href="/"><%= image_tag('logo_small.png', alt: 'HankSnap') %></a>
+    <div class="top_nav_action">
+      <a href="#" class="<%= 'current_action' if controller_name != 'contact_us' %>">Inbox</a>
+      <a href="#" class="<%= 'current_action' if controller_name == 'contact_us' %>">Sent</a>
+      <a href="#" class="<%= 'current_action' if controller_name != 'contact_us' %>">Compose</a>
+      <a href="#" class="<%= 'current_action' if controller_name == 'contact_us' %>">Friends</a>
+    </div>
+  </nav>
+</div>
