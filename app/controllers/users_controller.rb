@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :skip_if_logged_in, only: [:authenticate, :sign_in, :sign_up]
+
   def authenticate
   end
 
