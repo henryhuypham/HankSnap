@@ -3,7 +3,11 @@ class MessagesController < ApplicationController
   before_action :is_recipient_of_message, only: :view
 
   def inbox
-    @messages = current_user.received_messages.order(created_at: :desc)
+    friends = current_user.initiated_friends.where(status: :normal).map { |friendship|
+      friendship.responder
+    }
+
+    @messages = current_user.received_messages.where(sender: friends).order(created_at: :desc)
   end
 
   def sent
