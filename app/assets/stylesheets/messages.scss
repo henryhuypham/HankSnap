@@ -186,8 +186,11 @@
     background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px;
   }
 
-  input.email {
+  select.email {
     background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
+    margin-bottom: 20px;
+    height: 48px;
+    color: white;
   }
 
   input.message {

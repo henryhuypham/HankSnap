@@ -11,7 +11,9 @@ class MessagesController < ApplicationController
   end
 
   def compose
-    @friends = current_user.initiated_friends.where(status: :normal)
+    @friends = current_user.initiated_friends.where(status: :normal).map { |friendship|
+      friendship.responder
+    }
   end
 
   def send_message

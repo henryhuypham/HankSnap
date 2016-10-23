@@ -1,6 +1,6 @@
 <%= form_for :message, url: messages_send_message_path, method: :post, html: {id: 'compose_form', class: 'center_div'} do |f| %>
   <%= f.text_field :subject, class: 'name', placeholder: 'Subject', required: 'required' %>
-  <%= f.text_field :recipient, class: 'email', placeholder: 'Recipients', required: 'required', type: 'email' %>
+  <%= f.collection_select :recipient, @friends, :email, :email, {prompt: 'Select recipient'}, {class: 'email', required: 'required'} %>
   <%= f.text_area :content, class: 'message', placeholder: 'Please enter your message', required: 'required', rows: '4', cols: '50' %>
   <%= f.submit 'Send', class: 'btn' %>
 <% end %>
