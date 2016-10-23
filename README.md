@@ -2,11 +2,11 @@
 
 **HankSnap** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
 
-Submitted by: **Pham Thanh Huy**
+Submitted by: **Huy Pham**
 
-Time spent: **X** hours
+Time spent: **19** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://hankchat.herokuapp.com/**
 
 ## User Stories
 
@@ -38,23 +38,21 @@ The following **optional** functionality is complete:
 
 The following **additional** features are implemented:
 
-- [ ] (List anything else that you can get done to improve the app functionality!)
+- [x] Tried to make beautiful UI.
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![Video Walkthrough](https://www.youtube.com/watch?v=v0WqErJH08c)
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Setting up the relation between `User` and `Message` are tricky. I need to dig a bit on the documentation oon rails. Spent 2 hours to try & understand things like `has_and_belongs_to`, `has_one`, ... 
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Huy Pham]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
