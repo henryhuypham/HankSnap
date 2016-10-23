@@ -6,6 +6,7 @@
       <%= link_to 'Sent', messages_sent_path, class: "#{'current_action' if controller_name == 'messages' && action_name == 'sent'}" %>
       <%= link_to 'Compose', messages_compose_path, class: "#{'current_action' if controller_name == 'messages' && action_name == 'compose'}" %>
       <%= link_to 'Friends', friendships_index_path, class: "#{'current_action' if controller_name == 'friendships'}" %>
+      <%= link_to 'Sign Out', sign_out_path %>
     </div>
   </nav>
 </div>
