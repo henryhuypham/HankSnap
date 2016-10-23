@@ -1,2 +1,6 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<%= form_for :message, url: messages_send_message_path, method: :post, html: {id: 'compose_form', class: 'center_div'} do |f| %>
+  <%= f.text_field :subject, class: 'name', placeholder: 'Subject', required: 'required' %>
+  <%= f.text_field :recipient, class: 'email', placeholder: 'Recipients', required: 'required', type: 'email' %>
+  <%= f.text_area :content, class: 'message', placeholder: 'Please enter your message', required: 'required', rows: '4', cols: '50' %>
+  <%= f.submit 'Send', class: 'btn' %>
+<% end %>
